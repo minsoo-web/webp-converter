@@ -3,7 +3,11 @@ import imageminWEBP from "imagemin-webp";
 
 const files = await imagemin(["sources/*.{jpg,png,jpeg}"], {
   destination: "build",
-  plugins: [imageminWEBP({})],
+  plugins: [
+    imageminWEBP({
+      metadata: ["all"],
+    }),
+  ],
 });
 
 console.log(files);
